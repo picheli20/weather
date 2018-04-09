@@ -1,16 +1,14 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+import { IWeather } from '../weather.interface';
 
 @Component({
   selector: 'ca-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
-export class CardComponent implements OnInit {
-  @Input() cityId: string;
+export class CardComponent {
+  @Input() data: IWeather;
   @Input() showHumidity: boolean;
   @Input() showPressure: boolean;
-
-  ngOnInit() {
-    console.log(this.cityId);
-  }
 }

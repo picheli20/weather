@@ -1,0 +1,22 @@
+<div class="card">
+  <header>{{ data.name }}, {{ data.sys.country }}</header>
+  <div class="card-content"
+    [ngClass]="{
+      'weather-cold': data.main.temp <= 5,
+      'weather-normal': data.main.temp > 5 && data.main.temp <= 25,
+      'weather-warm': data.main.temp > 25
+    }">
+    {{ data.main.temp }}
+  </div>
+  <footer>
+    <div *ngIf="showHumidity">
+      <div class="title">Humidity</div>
+      {{ data.main.humidity }}%
+    </div>
+    <div *ngIf="showPressure">
+      <div class="title">Pressure</div>
+      {{ data.main.pressure }}hPa
+    </div>
+    <div class="updated">Updated at 11:30:20 PM</div>
+  </footer>
+</div>

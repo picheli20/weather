@@ -1,0 +1,57 @@
+@import 'color-palette';
+
+.card {
+  width: 250px;
+  background-color: $white;
+  box-shadow: 1px 1px 5px $box-shadow;
+
+  header {
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 0.8rem;
+    border-bottom: 1px solid $divider;
+  }
+
+  footer {
+    background-color: $card-footer;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+
+    .title {
+      padding: 10px;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      color: $font-color-light;
+    }
+
+    .updated {
+      flex: 0 0 100%;
+      font-size: 0.8rem;
+      padding: 10px;
+      color: $font-color-light;
+    }
+
+    div {
+      text-align: center;
+    }
+  }
+}
+
+.card-content {
+  font-size: 6rem;
+  text-align: center;
+  padding: 1rem;
+
+  &.weather-normal {
+    color: $weather-normal;
+  }
+
+  &.weather-cold {
+    color: $weather-cold;
+  }
+
+  &.weather-warm {
+    color: $weather-warm;
+  }
+}
