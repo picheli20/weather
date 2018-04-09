@@ -1,7 +1,9 @@
 <ca-header></ca-header>
 
 <div class="cards">
-  <ca-card cityId="3421319"></ca-card>
-  <ca-card cityId="3445709"></ca-card>
-  <ca-card cityId="184745"></ca-card>
+  <ca-card
+    *ngFor="let item of (list$ | async); let i=index"
+    [data]="item"
+    [showHumidity]="i === 1"
+    [showPressure]="i === 1"></ca-card>
 </div>

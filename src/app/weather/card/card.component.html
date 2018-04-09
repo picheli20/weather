@@ -6,7 +6,7 @@
       'weather-normal': data.main.temp > 5 && data.main.temp <= 25,
       'weather-warm': data.main.temp > 25
     }">
-    {{ data.main.temp }}
+    {{ data.main.temp }}°
   </div>
   <footer>
     <div *ngIf="showHumidity">
