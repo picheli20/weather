@@ -10,8 +10,13 @@ export class WeatherService {
   constructor(private http: HttpClient) { }
 
   load(cities: string[]) {
-    return this.http.get<IWeatherResp>
-      (`http://api.openweathermap.org/data/2.5/group?id=${cities.join(',')}&APPID=${this.APPID}&units=metric`)
-      .pipe(map((data: IWeatherResp) => data.list));
+    return this.http.get<IWeatherResp>(
+      `http://api.openweathermap.org/data/2.5/group?id=${cities.join(',')}&APPID=${this.APPID}&units=metric`,
+      ).pipe(
+        map((data: IWeatherResp) => {
+          data.list.map(item => item.updated = (new Date()).getTime());
+          return data.list;
+        }),
+      );
   }
 }

@@ -1,9 +1,12 @@
 <ca-header></ca-header>
 
 <div class="cards">
-  <ca-card
-    *ngFor="let item of (list$ | async); let i=index"
-    [data]="item"
-    [showHumidity]="i === 1"
-    [showPressure]="i === 1"></ca-card>
+  <ng-container *ngIf="!loading">
+    <ca-card
+      *ngFor="let item of list; let i=index"
+      [data]="item"
+      [showHumidity]="i === 1"
+      [showPressure]="i === 1"></ca-card>
+  </ng-container>
+  <ca-loader *ngIf="loading"></ca-loader>
 </div>

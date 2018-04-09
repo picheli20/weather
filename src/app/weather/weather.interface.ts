@@ -39,6 +39,7 @@ export interface IWeather {
   clouds: {
     all: number;
   };
+  updated?: number;
   dt: number;
   id: number;
   name: string;

@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
 
 import { HeaderComponent } from './header/header.component';
+import { LoaderComponent } from './loader/loader.component';
 
 
 @NgModule({
   declarations: [
-    HeaderComponent
+    HeaderComponent,
+    LoaderComponent,
   ],
   exports: [
-    HeaderComponent
+    HeaderComponent,
+    LoaderComponent,
   ],
   providers: [],
 })

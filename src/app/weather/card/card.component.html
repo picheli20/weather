@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" *ngIf="data">
   <header>{{ data.name }}, {{ data.sys.country }}</header>
   <div class="card-content"
     [ngClass]="{
@@ -17,6 +17,6 @@
       <div class="title">Pressure</div>
       {{ data.main.pressure }}hPa
     </div>
-    <div class="updated">Updated at 11:30:20 PM</div>
+    <div class="updated">Updated at {{ data.updated | date:'h:mm:ss a' }}</div>
   </footer>
 </div>

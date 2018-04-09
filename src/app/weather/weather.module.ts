@@ -5,7 +5,6 @@ import { CommonModule } from '@angular/common';
 import { WeatherService } from './weather.service';
 import { CardComponent } from './card/card.component';
 
-
 @NgModule({
   declarations: [
     CardComponent,
@@ -14,7 +13,7 @@ import { CardComponent } from './card/card.component';
     CardComponent,
   ],
   providers: [
-    WeatherService
+    WeatherService,
   ],
   imports: [
     HttpClientModule,
