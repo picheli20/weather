@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 
 import { LayoutModule } from './layout/layout.module';
 import { WeatherModule } from './weather/weather.module';
+import { CoreModule } from './core/core.module';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { WeatherModule } from './weather/weather.module';
     BrowserModule,
     LayoutModule,
     WeatherModule,
+    CoreModule,
   ],
   bootstrap: [AppComponent]
 })
