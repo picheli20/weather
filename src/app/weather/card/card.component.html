@@ -1,4 +1,4 @@
-<div class="card" *ngIf="data">
+<div *ngIf="data" class="card" @in>
   <header>{{ data.name }}, {{ data.sys.country }}</header>
   <div class="card-content"
     [ngClass]="{

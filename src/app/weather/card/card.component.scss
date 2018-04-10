@@ -2,13 +2,18 @@
 
 .card {
   width: 250px;
+  margin: 4.5px;
   background-color: $white;
   box-shadow: 1px 1px 5px $box-shadow;
+
+  @media (max-width: 949px) and (min-width: 520px) {
+    width: 500px;
+  }
 
   header {
     text-align: center;
     font-size: 1.2rem;
-    padding: 0.8rem;
+    padding: .7rem;
     border-bottom: 1px solid $divider;
   }
 
@@ -21,13 +26,13 @@
     .title {
       padding: 10px 10px 5px;
       text-transform: uppercase;
-      font-size: 0.8rem;
+      font-size: .7rem;
       color: $font-color-light;
     }
 
     .updated {
       flex: 0 0 100%;
-      font-size: 0.8rem;
+      font-size: .7rem;
       padding: 10px;
       color: $font-color-light;
     }

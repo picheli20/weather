@@ -1,11 +1,13 @@
 import { Component, Input } from '@angular/core';
 
 import { IWeather } from '../weather.interface';
+import { animations } from './card.animation';
 
 @Component({
   selector: 'ca-card',
   templateUrl: './card.component.html',
-  styleUrls: ['./card.component.scss']
+  styleUrls: ['./card.component.scss'],
+  animations,
 })
 export class CardComponent {
   private _data: IWeather;

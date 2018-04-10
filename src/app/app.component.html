@@ -3,6 +3,7 @@
 <div class="cards">
   <ng-container *ngIf="!loading">
     <ca-card
+      class="card"
       *ngFor="let item of list; let i=index"
       [data]="item"
       [showHumidity]="i === 1"

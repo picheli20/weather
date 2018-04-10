@@ -5,6 +5,19 @@
   min-height: calc(100vh - #{$header-height});
   justify-content: space-around;
   align-items: center;
-  padding-right: 55px;
-  padding-left: 55px;
+  max-width: 920px;
+  margin: auto;
+
+  @media (max-width: 949px) {
+    flex-direction: column;
+
+    .card:nth-child(2) {
+      order: -1;
+    }
+  }
+
+  @media (min-width: 950px) {
+    padding-right: 55px;
+    padding-left: 55px;
+  }
 }
