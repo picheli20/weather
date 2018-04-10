@@ -1,17 +1,21 @@
-const express = require('express');
-const path = require('path');
+const express = require('express')
+const http = require('http')
+const path = require('path')
+const compression = require('compression');
 
 const app = express();
-// Run the app by serving the static files
-// in the dist directory
+
 app.use(express.static(path.join(__dirname, '../dist')));
+app.use(compression()) //compressing dist folder
 
-// For all GET requests, send back index.html
-// so that PathLocationStrategy can be used
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(path.join(__dirname, '../dist/index.html')));
-});
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../dist/index.html'));
+})
 
-// Start the app by listening on the default
-// Heroku port
-app.listen(process.env.PORT || 8080);
+const port = process.env.PORT || '4201';
+
+app.set('port', port);
+
+const server = http.createServer(app);
+
+server.listen(port, () => console.log('Running at port ' + port))
