@@ -1,5 +1,5 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, inject, tick, fakeAsync } from '@angular/core/testing';
 import { of } from 'rxjs/observable/of';
 
 import { AppComponent } from './app.component';
@@ -31,7 +31,23 @@ describe('AppComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should be defined', () => {
-    expect(component).toBeDefined();
+  describe('.loadWeather()', () => {
+    it(`should call the weatherService.load()`,
+      inject([WeatherService], (service: WeatherService) => {
+        const spy = spyOn(service, 'load').and.callFake(() => of());
+        component.loadWeather(true);
+        expect(spy).toHaveBeenCalled();
+      }),
+    );
+
+    it(`should set loading to false`,
+      fakeAsync(inject([WeatherService], (service: WeatherService) => {
+        const spy = spyOn(service, 'load').and.callFake(() => of());
+        component.loading = true;
+        component.loadWeather(true).subscribe();
+        tick();
+        expect(component.loading).toBe(false);
+      }),
+    ));
   });
 });

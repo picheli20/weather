@@ -23,9 +23,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.loading = true;
 
     const timerSubscription = timer(0, this.weatherService.MAX_AGE).pipe(
-        map(
-          count => this.weatherService.load([`3421319`, `3445709`, `184745`], count !== 0).pipe(finalize(() => this.loading = false)),
-        ),
+        map(count => this.loadWeather(count !== 0)),
         mergeAll(),
       ).subscribe(
         data => this.list = data,
@@ -33,6 +31,11 @@ export class AppComponent implements OnInit, OnDestroy {
       );
 
     this.subscriptions.add(timerSubscription);
+  }
+
+  // ¯\_(ツ)_/¯ https://github.com/ReactiveX/rxjs/issues/1791
+  loadWeather(force: boolean) {
+    return this.weatherService.load([`3421319`, `3445709`, `184745`], force).pipe(finalize(() => this.loading = false));
   }
 
   ngOnDestroy() {

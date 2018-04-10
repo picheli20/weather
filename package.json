@@ -6,7 +6,8 @@
     "ng": "ng",
     "serve": "ng serve",
     "build": "ng build",
-    "test": "ng test",
+    "test": "ng test --watch=false --sourcemaps=false",
+    "test:tdd": "ng test --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },

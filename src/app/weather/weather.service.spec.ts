@@ -58,15 +58,14 @@ describe('WeatherService', () => {
     it(`should call .load() with the proper attributes`,
       fakeAsync(inject([WeatherService, CacheService, HttpClient], (service: WeatherService, cache: CacheService, http: HttpClient) => {
         const spy = spyOn(cache, 'get').and.callFake(() => of({}));
-        const subscription = service.load(['123']).subscribe();
+        const subscription = service.load(['123'], true).subscribe();
         tick();
         expect(cache.get).toHaveBeenCalledWith(
           'city-group',
           jasmine.any(Object),
           600000,
-          false,
+          true,
         );
-
         subscription.unsubscribe();
       }),
     ));
