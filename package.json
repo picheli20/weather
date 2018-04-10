@@ -6,7 +6,7 @@
     "ng": "ng",
     "start": "node server",
     "serve": "ng serve",
-    "build": "ng build",
+    "build": "ng build --env=prod",
     "test": "ng test --watch=false --sourcemaps=false",
     "test:tdd": "ng test --code-coverage",
     "lint": "ng lint",
