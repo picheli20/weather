@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
 
-import { ENVIRONMENT } from './environment.token';
 import { environment } from '../../environments/environment';
 
 import { CacheService } from './cache.service';
+import { ENVIRONMENT } from './environment.token';
 
 @NgModule({
   providers: [

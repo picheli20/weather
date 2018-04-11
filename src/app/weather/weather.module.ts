@@ -1,10 +1,10 @@
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
 
-import { WeatherService } from './weather.service';
 import { CardComponent } from './card/card.component';
+import { WeatherService } from './weather.service';
 
 @NgModule({
   declarations: [

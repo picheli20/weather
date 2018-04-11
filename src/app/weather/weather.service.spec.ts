@@ -1,13 +1,12 @@
-import { TestBed, inject, fakeAsync, tick } from '@angular/core/testing';
 import { HttpClient } from '@angular/common/http';
+import { TestBed, inject, fakeAsync, tick } from '@angular/core/testing';
 import { of } from 'rxjs/observable/of';
-import { delay } from 'rxjs/operators/delay';
 
-import { WeatherService } from './weather.service';
 import { CacheService } from '../core/cache.service';
-import { ENVIRONMENT, EnvConfig } from '../core/environment.token';
-import { SSL_OP_NO_QUERY_MTU } from 'constants';
+import { ENVIRONMENT } from '../core/environment.token';
+
 import { IWeatherResp } from './weather.interface';
+import { WeatherService } from './weather.service';
 
 describe('WeatherService', () => {
   beforeEach(() => {
@@ -26,7 +25,7 @@ describe('WeatherService', () => {
           provide: HttpClient,
           useValue: {
             get: () => of({}),
-          }
+          },
         },
         {
           provide: ENVIRONMENT,
@@ -36,7 +35,7 @@ describe('WeatherService', () => {
               token: '123',
               unit: 'metric',
             },
-          }
+          },
         },
       ],
     });
@@ -56,8 +55,8 @@ describe('WeatherService', () => {
     ));
 
     it(`should call .load() with the proper attributes`,
-      fakeAsync(inject([WeatherService, CacheService, HttpClient], (service: WeatherService, cache: CacheService, http: HttpClient) => {
-        const spy = spyOn(cache, 'get').and.callFake(() => of({}));
+      fakeAsync(inject([WeatherService, CacheService], (service: WeatherService, cache: CacheService) => {
+        spyOn(cache, 'get').and.callFake(() => of({}));
         const subscription = service.load(['123'], true).subscribe();
         tick();
         expect(cache.get).toHaveBeenCalledWith(

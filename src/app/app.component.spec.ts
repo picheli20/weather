@@ -19,8 +19,8 @@ describe('AppComponent', () => {
           useValue: {
             load: () => of({}),
           },
-        }
-      ]
+        },
+      ],
     })
     .compileComponents();
   }));
@@ -42,7 +42,7 @@ describe('AppComponent', () => {
 
     it(`should set loading to false`,
       fakeAsync(inject([WeatherService], (service: WeatherService) => {
-        const spy = spyOn(service, 'load').and.callFake(() => of());
+        spyOn(service, 'load').and.callFake(() => of());
         component.loading = true;
         component.loadWeather(true).subscribe();
         tick();

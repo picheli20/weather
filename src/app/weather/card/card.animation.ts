@@ -1,4 +1,4 @@
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import { trigger, style, transition, animate } from '@angular/animations';
 
 export const animations = [
   trigger('in', [
@@ -9,5 +9,5 @@ export const animations = [
         transform: 'translateY(0)',
       })),
     ]),
-  ])
+  ]),
 ];

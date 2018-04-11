@@ -1,11 +1,7 @@
 import { TestBed, inject, fakeAsync, tick } from '@angular/core/testing';
-import { HttpClient } from '@angular/common/http';
 import { of } from 'rxjs/observable/of';
-import { delay } from 'rxjs/operators/delay';
 
 import { CacheService } from './cache.service';
-import { ENVIRONMENT, EnvConfig } from '../core/environment.token';
-import { SSL_OP_NO_QUERY_MTU } from 'constants';
 
 describe('CacheService', () => {
   beforeEach(() => {

@@ -1,17 +1,15 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 
+import { CoreModule } from './core/core.module';
 import { LayoutModule } from './layout/layout.module';
 import { WeatherModule } from './weather/weather.module';
-import { CoreModule } from './core/core.module';
-
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -19,6 +17,6 @@ import { CoreModule } from './core/core.module';
     WeatherModule,
     CoreModule,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

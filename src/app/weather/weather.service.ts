@@ -1,14 +1,15 @@
-import { Injectable, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, tap } from 'rxjs/operators';
+import { Injectable, Inject } from '@angular/core';
+import { map } from 'rxjs/operators/map';
+import { tap } from 'rxjs/operators/tap';
 
-import { IWeatherResp, IWeather } from './weather.interface';
-import { ENVIRONMENT, EnvConfig } from '../core/environment.token';
 import { CacheService } from '../core/cache.service';
+import { ENVIRONMENT, EnvConfig } from '../core/environment.token';
+
+import { IWeatherResp } from './weather.interface';
 
 @Injectable()
 export class WeatherService {
-  private APPID = 'e41461f4abde3ad00782aba29fc8f8eb';
   private sufix = `&APPID=${this.env.api.token}&units=${this.env.api.unit}`;
 
   public MAX_AGE = 10 * 60 * 1000; // 10 min

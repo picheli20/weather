@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
 import { of } from 'rxjs/observable/of';
-import { tap } from 'rxjs/operators';
-
+import { tap } from 'rxjs/operators/tap';
+import { Subject } from 'rxjs/Subject';
 
 interface CacheContent {
   expiry: number;
@@ -42,7 +41,6 @@ export class CacheService {
     const expiry = Date.now() + maxAge;
     localStorage.setItem(key, JSON.stringify({ value, expiry }));
   }
-
 
   /**
    * Checks if the key exists and is not expired.

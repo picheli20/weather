@@ -16,12 +16,12 @@ export interface IWeather {
     sunrise: string;
     sunset: string;
   };
-  weather: {
+  weather: Array<{
     id: number;
     main: string;
     description: string;
     icon: string;
-  }[];
+  }>;
   list: number;
   main: {
     temp: number;

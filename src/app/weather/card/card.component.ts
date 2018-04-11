@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 import { IWeather } from '../weather.interface';
+
 import { animations } from './card.animation';
 
 @Component({

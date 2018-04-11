@@ -1,16 +1,16 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { map, mergeAll, finalize } from 'rxjs/operators';
 import { timer } from 'rxjs/observable/timer';
-import { merge } from 'rxjs/observable/merge';
+import { finalize } from 'rxjs/operators/finalize';
+import { map } from 'rxjs/operators/map';
+import { mergeAll } from 'rxjs/operators/mergeAll';
 import { Subscription } from 'rxjs/Subscription';
 
 import { WeatherService } from './weather/weather.service';
-import { IWeather } from './weather/weather.interface';
 
 @Component({
   selector: 'ca-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit, OnDestroy {
   private subscriptions = new Subscription();
