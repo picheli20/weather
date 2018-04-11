@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.0.
 
+You can check the deployed application here: https://picheli20-weather.herokuapp.com/
+
 ## Before each step
 
 Run `npm install` to get all the npm dependencies.
