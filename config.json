@@ -1,0 +1,15 @@
+{
+  "run": {
+    "install": [
+      "npm i"
+    ],
+    "test": [
+      "npm run test",
+      "npm run e2e"
+    ],
+    "testFiles": [
+      "./e2e/**",
+      "**/**.spec.ts"
+    ]
+  }
+}
